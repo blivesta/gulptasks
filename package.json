@@ -1,0 +1,14 @@
+{
+  "name": "gulptasks",
+  "version": "0.0.1",
+  "description": "gulp tasks for gulpconfig",
+  "keywords": [
+    "gulp"
+  ],
+  "author": "blivesta",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/blivesta/gulptasks.git"
+  }
+}

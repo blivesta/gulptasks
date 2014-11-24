@@ -1,0 +1,6 @@
+src
+build
+node_modules
+bak
+gulpconfig.js
+gulpfile.js
