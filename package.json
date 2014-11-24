@@ -1,6 +1,6 @@
 {
   "name": "gulptasks",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "gulp tasks for gulpconfig",
   "keywords": [
     "gulp"
