@@ -1,6 +1,6 @@
 var gulp      = require('gulp');
 var pagespeed = require('psi');
-var config    = require('../gulpconfig').pagespeed;
+var config    = require('../../../gulpconfig').pagespeed;
 
 gulp.task('pagespeed', pagespeed.bind(null, {
   url: config.product,

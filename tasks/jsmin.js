@@ -3,7 +3,7 @@ var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
 var gzip   = require('gulp-gzip');
 var size   = require('gulp-size');
-var config = require('../gulpconfig').jsmin;
+var config = require('../../../gulpconfig').jsmin;
 
 gulp.task('jsmin', function() {
   return gulp.src(config.src)

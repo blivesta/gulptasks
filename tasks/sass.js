@@ -6,7 +6,7 @@ var sourcemaps   = require('gulp-sourcemaps');
 var autoprefixer = require('gulp-autoprefixer');
 var size         = require('gulp-size');
 var browserSync  = require('browser-sync');
-var config       = require('../gulpconfig').sass;
+var config       = require('../../../gulpconfig').sass;
 
 gulp.task('sass', function() {
   return gulp.src(config.src)

@@ -2,7 +2,7 @@ var gulp     = require('gulp');
 var newer    = require('gulp-newer');
 var imagemin = require('gulp-imagemin');
 var size     = require('gulp-size');
-var config   = require('../gulpconfig').imagemin;
+var config   = require('../../../gulpconfig').imagemin;
 
 gulp.task('imagemin', function() {
   return gulp.src(config.src)

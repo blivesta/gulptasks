@@ -1,4 +1,4 @@
 var gulp   = require('gulp');
-var config = require('../gulpconfig').task;
+var config = require('../../../gulpconfig').task;
 
 config.default;

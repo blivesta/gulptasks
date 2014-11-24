@@ -2,7 +2,7 @@ var gulp        = require('gulp');
 var browserSync = require('browser-sync');
 var cp          = require('child_process');
 var browserSync = require('browser-sync');
-var config      = require('../gulpconfig').jekyll;
+var config      = require('../../../gulpconfig').jekyll;
 
 gulp.task('jekyll-build', function (done) {
   browserSync.notify(config.buildMessages);

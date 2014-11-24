@@ -3,7 +3,7 @@ var csso   = require('gulp-csso');
 var rename = require('gulp-rename');
 var size   = require('gulp-size');
 var gzip   = require('gulp-gzip');
-var config = require('../gulpconfig').cssmin;
+var config = require('../../../gulpconfig').cssmin;
 
 gulp.task('cssmin', function(){
   return gulp.src(config.src)

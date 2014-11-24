@@ -1,6 +1,6 @@
 var gulp       = require('gulp');
 var sourcemaps = require('gulp-sourcemaps');
-var config     = require('../gulpconfig').jsmap;
+var config     = require('../../../gulpconfig').jsmap;
 
 gulp.task('jsmap', function() {
   return gulp.src(config.src)
