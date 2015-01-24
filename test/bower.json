@@ -1,0 +1,7 @@
+{
+  "name": "gulptasks",
+  "version": "0.0.3",
+  "dependencies": {
+    "animsition": "^3.4.3"
+  }
+}

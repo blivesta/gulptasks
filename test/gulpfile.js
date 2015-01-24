@@ -1,27 +1,3 @@
-#Gulptasks
-
-[![npm version](https://img.shields.io/npm/v/gulptasks.svg?style=flat)](https://www.npmjs.com/package/gulptasks)
-[![Build Status](https://img.shields.io/travis/blivesta/gulptasks/master.svg?style=flat)](https://travis-ci.org/blivesta/gulptasks)
-[![Dependency Status](https://david-dm.org/blivesta/gulptasks.svg)](https://david-dm.org/blivesta/gulptasks)
-
-
-## Feature
-
-`bower` `concat` `csslint` `cssmin` `ghpage` `imgmin` `jekyll` `jshint` `jsmin` `less` `sass`
-
-## Install
-
-```bash
-$ npm install gulptasks
-```
-
-## Usage
-
-### Example
-
-gulpfile.js
-
-```js
 var browsersync = require('browser-sync');
 var reload      = browsersync.reload;
 var del         = require('del');
@@ -29,16 +5,7 @@ var gulp        = require('gulp');
 var pagespeed   = require('psi');
 var runSequence = require('run-sequence');
 
-var autoprefixerBrowsers = [
-  'Android 2.3',
-  'Android >= 4',
-  'Chrome >= 20',
-  'Firefox >= 24',
-  'Explorer >= 8',
-  'iOS >= 6',
-  'Opera >= 12',
-  'Safari >= 6'
-];
+var autoprefixerBrowsers = ['> 1%', 'last 2 versions', 'Firefox ESR', 'Opera 12.1'];
 
 var headerBanner = [
 '/*!',
@@ -116,27 +83,27 @@ module.exports = {
   }
 };
 
-gulp.task('bower', require('gulptasks/lib/bower'));
+gulp.task('bower', require('../lib/bower'));
 
-gulp.task('sass', require('gulptasks/lib/sass'));
+// gulp.task('sass', require('../lib/sass'));
 
-gulp.task('less', require('gulptasks/lib/less'));
+// gulp.task('less', require('../lib/less'));
 
-gulp.task('csslint', require('gulptasks/lib/csslint'));
+// gulp.task('csslint', require('../lib/csslint'));
 
-gulp.task('cssmin', require('gulptasks/lib/cssmin'));
+// gulp.task('cssmin', require('../lib/cssmin'));
 
-gulp.task('concat', require('gulptasks/lib/concat'));
+// gulp.task('concat', require('../lib/concat'));
 
-gulp.task('jshint', require('gulptasks/lib/jshint'));
+// gulp.task('jshint', require('../lib/jshint'));
 
-gulp.task('jsmin', require('gulptasks/lib/jsmin'));
+// gulp.task('jsmin', require('../lib/jsmin'));
 
-gulp.task('imgmin', require('gulptasks/lib/imgmin'));
+// gulp.task('imgmin', require('../lib/imgmin'));
 
-gulp.task('jekyll-build', require('gulptasks/lib/jekyll'));
+// gulp.task('jekyll-build', require('../lib/jekyll'));
 
-gulp.task('deploy-ghpage', require('gulptasks/lib/ghpage'));
+// gulp.task('deploy-ghpage', require('../lib/ghpage'));
 
 //
 
@@ -166,5 +133,3 @@ gulp.task('build', function(){
     ['cssmin','jsmin','jekyll-build']
   );
 });
-
-```
