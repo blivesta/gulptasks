@@ -123,27 +123,27 @@ module.exports = {
   }
 };
 
-gulp.task('bower', require('../lib/bower'));
+gulp.task('bower', require('gulptasks/lib/bower'));
 
-gulp.task('sass', require('../lib/sass'));
+gulp.task('sass', require('gulptasks/lib/sass'));
 
-gulp.task('less', require('../lib/less'));
+gulp.task('less', require('gulptasks/lib/less'));
 
-gulp.task('csslint', require('../lib/csslint'));
+gulp.task('csslint', require('gulptasks/lib/csslint'));
 
-gulp.task('cssmin', require('../lib/cssmin'));
+gulp.task('cssmin', require('gulptasks/lib/cssmin'));
 
-gulp.task('concat', require('../lib/concat'));
+gulp.task('concat', require('gulptasks/lib/concat'));
 
-gulp.task('jshint', require('../lib/jshint'));
+gulp.task('jshint', require('gulptasks/lib/jshint'));
 
-gulp.task('jsmin', require('../lib/jsmin'));
+gulp.task('jsmin', require('gulptasks/lib/jsmin'));
 
-gulp.task('imgmin', require('../lib/imgmin'));
+gulp.task('imgmin', require('gulptasks/lib/imgmin'));
 
-gulp.task('jekyll-build', require('../lib/jekyll'));
+gulp.task('jekyll-build', require('gulptasks/lib/jekyll'));
 
-gulp.task('deploy-ghpage', require('../lib/ghpage'));
+gulp.task('deploy-ghpage', require('gulptasks/lib/ghpage'));
 
 //
 
