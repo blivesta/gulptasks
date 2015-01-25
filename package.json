@@ -1,12 +1,12 @@
 {
   "name": "gulptasks",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "My gulp tasks",
   "keywords": [
     "gulp"
   ],
   "author": "blivesta",
-  "homepage":"http://blivesta.com",
+  "homepage": "https://github.com/blivesta",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -15,33 +15,37 @@
   "devDependencies": {
     "browser-sync": "^1.7.0",
     "del": "^1.1.1",
+    "lodash": "^2.4.1",
     "psi": "^1.0.4",
-    "run-sequence": "^1.0.2",
-    "require-dir":"^0.1.0"
+    "require-dir": "^0.1.0",
+    "run-sequence": "^1.0.2"
   },
   "dependencies": {
     "gulp": "~3.8.10",
     "gulp-autoprefixer": "^1.0.1",
     "gulp-bower": "^0.0.10",
+    "gulp-bump": "^0.1.11",
     "gulp-cached": "^1.0.1",
     "gulp-changed": "^1.0.0",
+    "gulp-consolidate": "^0.1.1",
     "gulp-concat": "^2.4.2",
     "gulp-csslint": "^0.1.5",
-    "gulp-cssnext": "^0.6.0",
     "gulp-csso": "^0.2.9",
-    "gulp-gh-pages":"^0.4.0",
-    "gulp-gzip": "0.0.8",
-    "gulp-imagemin": "^2.1.0",
+    "gulp-gh-pages": "^0.4.0",
+    "gulp-gzip": "^0.0.8",
+    "gulp-header": "^1.2.2",
+    "gulp-iconfont": "^1.0.0",
+    "gulp-if": "^1.2.5",
+    "gulp-image": "^0.5.3",
     "gulp-jshint": "^1.8.6",
     "gulp-less": "^2.0.1",
-    "gulp-header": "^1.2.2",
     "gulp-newer": "^0.5.0",
-    "gulp-if": "^1.2.5",
     "gulp-rename": "^1.2.0",
     "gulp-ruby-sass": "^0.7.1",
     "gulp-size": "^1.1.0",
     "gulp-sourcemaps": "^1.2.8",
-    "gulp-uglify":"1.1.0",
-    "jshint-stylish":"^1.0.0"
+    "gulp-svg2png": "^0.3.0",
+    "gulp-uglify": "1.1.0",
+    "jshint-stylish": "^1.0.0"
   }
 }
