@@ -50,6 +50,7 @@ module.exports = {
     jekyllPub: './pub'
   },
   csslint: {
+    setting: './.csslintrc',
     src:  './build/**/*.css',
   },
   cssmin: {
@@ -66,7 +67,8 @@ module.exports = {
     dest: './build/js/'
   },
   jshint: {
-    src:  './src/js/*.js',
+    setting: './.jshintrc',
+    src:  './src/js/*.js'
   },
   imgmin: {
     src:  './src/images/**/*',
