@@ -1,7 +1,7 @@
 {
   "name": "gulptasks",
-  "version": "0.2.1",
-  "description": "My gulp tasks",
+  "version": "0.3.0",
+  "description": "gulp tasks",
   "keywords": [
     "gulp"
   ],
