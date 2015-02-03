@@ -36,8 +36,8 @@ module.exports = {
     pkg: pkg,
     headerBanner : true,
     banner:headerBanner,
-    jekyll : false,
-    jekyllPub: './pub'
+    staticGenerator:true,
+    staticGeneratorBuild:'./pub'
   },
   less: {
     src: './src/less/test-less.less',
@@ -46,8 +46,8 @@ module.exports = {
     pkg: pkg,
     headerBanner : true,
     banner:headerBanner,
-    jekyll : false,
-    jekyllPub: './pub'
+    staticGenerator:true,
+    staticGeneratorBuild:'./pub'
   },
   csslint: {
     setting: './.csslintrc',
@@ -80,6 +80,9 @@ module.exports = {
   },
   jekyll: {
     buildMessages : '<span style="color: grey">Running:</span> $ jekyll build'
+  },
+  hugo: {
+    buildMessages : '<span style="color: grey">Running:</span> $ hugo'
   },
   ghpage : {
     src : "./pub/**/*",
@@ -126,6 +129,8 @@ gulp.task('bower', require('../lib/bower'));
 // gulp.task('svg2png', require('../lib/svg2png'));
 
 // gulp.task('jekyll-build', require('../lib/jekyll'));
+
+// gulp.task('jekyll-build', require('../lib/hugo'));
 
 // gulp.task('deploy-ghpage', require('../lib/ghpage'));
 

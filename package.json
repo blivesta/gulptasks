@@ -1,6 +1,6 @@
 {
   "name": "gulptasks",
-  "version": "0.4.3",
+  "version": "0.5.0",
   "description": "Gulp's small tasks for web app development.",
   "keywords": [
     "gulp"
@@ -24,8 +24,6 @@
     "gulp-autoprefixer": "^2.1.0",
     "gulp-bower": "^0.0.10",
     "gulp-bump": "^0.1.11",
-    "gulp-cached": "^1.0.1",
-    "gulp-changed": "^1.0.0",
     "gulp-consolidate": "^0.1.1",
     "gulp-concat": "^2.4.2",
     "gulp-csslint": "^0.1.5",
