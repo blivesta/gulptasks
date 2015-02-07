@@ -1,3 +1,4 @@
 baseurl = "/"
 title = "Hugo Themes"
 author = ""
+publishdir = "../_hugo-build"

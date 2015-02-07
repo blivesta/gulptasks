@@ -26,12 +26,23 @@ module.exports = {
   },
   uninstall: {
     files: [
+      './build',
       './build'
     ]
   },
   sass: {
     src: './src/sass/test-sass.scss',
-    dest: './build/scss/',
+    dest: './build/sass/',
+    autoprefixer: autoprefixerBrowsers,
+    pkg: pkg,
+    headerBanner : true,
+    banner:headerBanner,
+    staticGenerator:true,
+    staticGeneratorBuild:'./pub'
+  },
+  rubysass: {
+    src: './src/ruby-sass/test-ruby-sass.scss',
+    dest: './build/ruby-sass/',
     autoprefixer: autoprefixerBrowsers,
     pkg: pkg,
     headerBanner : true,
@@ -48,6 +59,10 @@ module.exports = {
     banner:headerBanner,
     staticGenerator:true,
     staticGeneratorBuild:'./pub'
+  },
+  header: {
+    src:  './build/sass/test-sass.css',
+    dest:  './build/banner',
   },
   csslint: {
     setting: './.csslintrc',
@@ -82,7 +97,7 @@ module.exports = {
     buildMessages : '<span style="color: grey">Running:</span> $ jekyll build'
   },
   hugo: {
-    buildMessages : '<span style="color: grey">Running:</span> $ hugo'
+    src:"hugo"
   },
   ghpage : {
     src : "./pub/**/*",
@@ -110,6 +125,10 @@ module.exports = {
 
 gulp.task('bower', require('../lib/bower'));
 
+// gulp.task('header', require('../lib/header'));
+
+gulp.task('rubysass', require('../lib/rubysass'));
+
 // gulp.task('sass', require('../lib/sass'));
 
 // gulp.task('less', require('../lib/less'));
@@ -130,7 +149,7 @@ gulp.task('bower', require('../lib/bower'));
 
 // gulp.task('jekyll-build', require('../lib/jekyll'));
 
-// gulp.task('jekyll-build', require('../lib/hugo'));
+// gulp.task('hugo', require('../lib/hugo'));
 
 // gulp.task('deploy-ghpage', require('../lib/ghpage'));
 
