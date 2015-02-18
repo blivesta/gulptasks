@@ -1,6 +1,6 @@
 {
   "name": "gulptasks",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "Gulp's small tasks for web app development.",
   "keywords": [
     "gulp"
@@ -14,12 +14,11 @@
   },
   "devDependencies": {
     "browser-sync": "^1.7.0",
-    "del": "^1.1.1",
     "lodash": "^2.4.1",
-    "psi": "^1.0.4",
     "run-sequence": "^1.0.2"
   },
   "dependencies": {
+    "del": "^1.1.1",
     "gulp": "~3.8.10",
     "gulp-autoprefixer": "^2.1.0",
     "gulp-bower": "^0.0.10",
@@ -29,7 +28,7 @@
     "gulp-csslint": "^0.1.5",
     "gulp-csso": "^1.0.0",
     "gulp-gh-pages": "^0.4.0",
-    "gulp-gzip": "^0.0.8",
+    "gulp-gzip": "^1.0.0",
     "gulp-header": "^1.2.2",
     "gulp-iconfont": "^1.0.0",
     "gulp-if": "^1.2.5",
