@@ -1,8 +1,6 @@
 var browsersync = require('browser-sync');
 var reload      = browsersync.reload;
-var del         = require('del');
 var gulp        = require('gulp');
-var pagespeed   = require('psi');
 var runSequence = require('run-sequence');
 var pkg         = require('../package.json');
 
@@ -26,7 +24,6 @@ module.exports = {
   },
   uninstall: {
     files: [
-      './build',
       './build'
     ]
   },
@@ -106,7 +103,7 @@ module.exports = {
   },
   pagespeed: {
     production: 'http://example.com',
-    // develop : 'http://dev.example.com'
+    strategy: 'mobile'
   },
   bump: {
     version: pkg.version, // base
@@ -123,11 +120,11 @@ module.exports = {
   }
 };
 
-gulp.task('bower', require('../lib/bower'));
+// gulp.task('bower', require('../lib/bower'));
 
 // gulp.task('header', require('../lib/header'));
 
-gulp.task('rubysass', require('../lib/rubysass'));
+// gulp.task('rubysass', require('../lib/rubysass'));
 
 // gulp.task('sass', require('../lib/sass'));
 
@@ -157,16 +154,11 @@ gulp.task('rubysass', require('../lib/rubysass'));
 
 // gulp.task('iconfont', require('../lib/iconfont'));
 
-// uninstall
-gulp.task('uni', del.bind(null, module.exports.uninstall.files));
+// gulp.task('uninstall', require('../lib/uninstall'));
+
+gulp.task('pagespeed', require('../lib/pagespeed'));
 
 gulp.task('server', function(){ browsersync.init(null, module.exports.browsersync); });
-
-gulp.task('pagespeed', function (cb) {
-  pagespeed.output(module.exports.pagespeed.production, {
-    strategy: 'mobile'
-  }, cb);
-});
 
 gulp.task('default',['server'], function(){
   gulp.watch(['./src/less/**/*.less'], ['less','csslint', reload]);

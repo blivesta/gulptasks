@@ -13,7 +13,7 @@ $ npm install gulptasks
 
 ## Usage
 
-### [Example: gulpfile.js](https://gist.github.com/blivesta/1cbbdbd2204048234688)
+### [Example: gulpfile.js](https://github.com/blivesta/gulptasks/blob/master/test/gulpfile.js)
 
 ## License
 Released under the [MIT](https://github.com/blivesta/gulptasks/blob/master/LICENSE) license.
