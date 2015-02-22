@@ -18,9 +18,10 @@ var headerBanner = [
 
 module.exports = {
   browsersync: {
-    notify: true,
-    https: false,
-    server: './build/ruby-sass'
+    server: "./build/ruby-sass",
+    // proxy: "yourlocal.dev",
+    // notify: true,
+    // https: false
   },
   uninstall: {
     files: [
@@ -47,22 +48,21 @@ module.exports = {
     src: './src/ruby-sass/test-ruby-sass.scss',
     dest: './build/ruby-sass/',
     options: {
-      noCache: true,
-      bundleExec: false,
+      // noCache: false,
+      // bundleExec: false,
       sourcemap: true
     },
+    filter:'**/*.css',
     autoprefixer: autoprefixerBrowsers,
     notify :"Compiled RubySass"
   },
   less: {
     src: './src/less/test-less.less',
     dest: './build/less/',
+    options:{},
+    filter:'**/*.css',
     autoprefixer: autoprefixerBrowsers,
-    pkg: pkg,
-    headerBanner : true,
-    banner:headerBanner,
-    staticGenerator:true,
-    staticGeneratorBuild:'./pub'
+    notify :"Compiled Less"
   },
   banner: {
     src:  './build/ruby-sass/test-ruby-sass.css',
@@ -133,8 +133,8 @@ module.exports = {
 
 // gulp.task('banner', require('../lib/banner'));
 
-// gulp.task('rubysass', require('../lib/rubysass'));
-gulp.task('scsslint', require('../lib/scsslint'));
+gulp.task('rubysass', require('../lib/rubysass'));
+// gulp.task('scsslint', require('../lib/scsslint'));
 
 // gulp.task('sass', require('../lib/sass'));
 
@@ -165,15 +165,20 @@ gulp.task('scsslint', require('../lib/scsslint'));
 // gulp.task('iconfont', require('../lib/iconfont'));
 
 // gulp.task('uninstall', require('../lib/uninstall'));
+// gulp.task('uninstall', require('../lib/uninstall'));
+//  return del.bind(null, config.files);
 
 // gulp.task('pagespeed', require('../lib/pagespeed'));
+gulp.task('browsersync', require('../lib/browsersync'));
 
-gulp.task('server', function(){ browsersync.init(null, module.exports.browsersync); });
+// gulp.task('server', function(){ browsersync.init(null, module.exports.browsersync); });
 
-gulp.task('default',['server'], function(){
-  // gulp.watch(['./src/less/**/*.less'], ['less','csslint', reload]);
+gulp.task('default',['browsersync'], function(){
   // gulp.watch(['./src/scss/**/*.scss'], ['sass','csslint', reload]);
+  // gulp.watch(['./src/less/**/*.less'], ['less']);
+  // gulp.watch("./build/less/*.html").on('change', reload);
   gulp.watch(['./src/ruby-sass/**/*.scss'], ['rubysass']);
+  gulp.watch("./build/ruby-sass/*.html").on('change', reload);
   // gulp.watch(['./src/js/**/*.js'], ['jshint','jsmin', reload]);
   // gulp.watch(['./jekyll/**/*.html'], ['jekyll-build', reload]);
 });
