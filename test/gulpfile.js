@@ -40,12 +40,13 @@ module.exports = {
   rubysass: {
     src: './src/ruby-sass/test-ruby-sass.scss',
     dest: './build/ruby-sass/',
-    autoprefixer: autoprefixerBrowsers,
     options: {
       noCache: true,
       bundleExec: false,
       sourcemap: true
-    }
+    },
+    autoprefixer: autoprefixerBrowsers,
+    notify :"Compiled RubySass"
   },
   less: {
     src: './src/less/test-less.less',
@@ -124,9 +125,9 @@ module.exports = {
 
 // gulp.task('bower', require('../lib/bower'));
 
-gulp.task('banner', require('../lib/banner'));
+// gulp.task('banner', require('../lib/banner'));
 
-// gulp.task('rubysass', require('../lib/rubysass'));
+gulp.task('rubysass', require('../lib/rubysass'));
 
 // gulp.task('sass', require('../lib/sass'));
 
