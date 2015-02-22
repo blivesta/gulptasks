@@ -1,6 +1,6 @@
 {
   "name": "gulptasks",
-  "version": "0.8.0",
+  "version": "0.8.1",
   "description": "Gulp's small tasks for web app development.",
   "keywords": [
     "gulp"
