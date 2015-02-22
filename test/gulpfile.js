@@ -27,6 +27,12 @@ module.exports = {
       // './build'
     ]
   },
+  scsslint: {
+    src: './src/ruby-sass/**/*.{sass,scss}',
+    options: {
+      bundleExec: false
+    }
+  },
   sass: {
     src: './src/sass/test-sass.scss',
     dest: './build/sass/',
@@ -127,7 +133,8 @@ module.exports = {
 
 // gulp.task('banner', require('../lib/banner'));
 
-gulp.task('rubysass', require('../lib/rubysass'));
+// gulp.task('rubysass', require('../lib/rubysass'));
+gulp.task('scsslint', require('../lib/scsslint'));
 
 // gulp.task('sass', require('../lib/sass'));
 
