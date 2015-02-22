@@ -20,11 +20,11 @@ module.exports = {
   browsersync: {
     notify: true,
     https: false,
-    server: './pub'
+    server: './build/ruby-sass'
   },
   uninstall: {
     files: [
-      './build'
+      // './build'
     ]
   },
   sass: {
@@ -41,11 +41,11 @@ module.exports = {
     src: './src/ruby-sass/test-ruby-sass.scss',
     dest: './build/ruby-sass/',
     autoprefixer: autoprefixerBrowsers,
-    pkg: pkg,
-    headerBanner : true,
-    banner:headerBanner,
-    staticGenerator:true,
-    staticGeneratorBuild:'./pub'
+    options: {
+      noCache: true,
+      bundleExec: false,
+      sourcemap: true
+    }
   },
   less: {
     src: './src/less/test-less.less',
@@ -57,9 +57,11 @@ module.exports = {
     staticGenerator:true,
     staticGeneratorBuild:'./pub'
   },
-  header: {
-    src:  './build/sass/test-sass.css',
+  banner: {
+    src:  './build/ruby-sass/test-ruby-sass.css',
     dest:  './build/banner',
+    pkg: pkg,
+    banner:headerBanner
   },
   csslint: {
     setting: './.csslintrc',
@@ -122,7 +124,7 @@ module.exports = {
 
 // gulp.task('bower', require('../lib/bower'));
 
-// gulp.task('header', require('../lib/header'));
+gulp.task('banner', require('../lib/banner'));
 
 // gulp.task('rubysass', require('../lib/rubysass'));
 
@@ -156,15 +158,16 @@ module.exports = {
 
 // gulp.task('uninstall', require('../lib/uninstall'));
 
-gulp.task('pagespeed', require('../lib/pagespeed'));
+// gulp.task('pagespeed', require('../lib/pagespeed'));
 
 gulp.task('server', function(){ browsersync.init(null, module.exports.browsersync); });
 
 gulp.task('default',['server'], function(){
-  gulp.watch(['./src/less/**/*.less'], ['less','csslint', reload]);
-  gulp.watch(['./src/scss/**/*.scss'], ['sass','csslint', reload]);
-  gulp.watch(['./src/js/**/*.js'], ['jshint','jsmin', reload]);
-  gulp.watch(['./jekyll/**/*.html'], ['jekyll-build', reload]);
+  // gulp.watch(['./src/less/**/*.less'], ['less','csslint', reload]);
+  // gulp.watch(['./src/scss/**/*.scss'], ['sass','csslint', reload]);
+  gulp.watch(['./src/ruby-sass/**/*.scss'], ['rubysass']);
+  // gulp.watch(['./src/js/**/*.js'], ['jshint','jsmin', reload]);
+  // gulp.watch(['./jekyll/**/*.html'], ['jekyll-build', reload]);
 });
 
 gulp.task('build', function(){
