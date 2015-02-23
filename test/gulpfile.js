@@ -78,6 +78,10 @@ module.exports = {
     src:  './build/**/*.css',
     dest: './build/css/'
   },
+  useref: {
+    src:  './src/useref/index.html',
+    dest: './build/useref/'
+  },
   concat: {
     src:  './src/js/*.js',
     dest: './build/js',
@@ -131,54 +135,42 @@ module.exports = {
 
 // gulp.task('bower', require('../lib/bower'));
 
-// gulp.task('banner', require('../lib/banner'));
 
-gulp.task('rubysass', require('../lib/rubysass'));
+// gulp.task('rubysass', require('../lib/rubysass'));
+
 // gulp.task('scsslint', require('../lib/scsslint'));
-
 // gulp.task('sass', require('../lib/sass'));
-
 // gulp.task('less', require('../lib/less'));
-
 // gulp.task('csslint', require('../lib/csslint'));
-
 // gulp.task('cssmin', require('../lib/cssmin'));
-
 // gulp.task('concat', require('../lib/concat'));
-
 // gulp.task('jshint', require('../lib/jshint'));
-
 // gulp.task('jsmin', require('../lib/jsmin'));
 
 // gulp.task('imgmin', require('../lib/imgmin'));
-
 // gulp.task('svg2png', require('../lib/svg2png'));
 
 // gulp.task('jekyll-build', require('../lib/jekyll'));
-
 // gulp.task('hugo', require('../lib/hugo'));
 
 // gulp.task('deploy-ghpage', require('../lib/ghpage'));
-
 // gulp.task('bump', require('../lib/bump'));
+// gulp.task('banner', require('../lib/banner'));
+gulp.task('useref', require('../lib/useref'));
 
 // gulp.task('iconfont', require('../lib/iconfont'));
-
 // gulp.task('uninstall', require('../lib/uninstall'));
-// gulp.task('uninstall', require('../lib/uninstall'));
-//  return del.bind(null, config.files);
-
 // gulp.task('pagespeed', require('../lib/pagespeed'));
-gulp.task('browsersync', require('../lib/browsersync'));
+// gulp.task('browsersync', require('../lib/browsersync'));
 
-// gulp.task('server', function(){ browsersync.init(null, module.exports.browsersync); });
+// gulp.task('server', function(){browsersync(module.exports.browsersync);});
 
 gulp.task('default',['browsersync'], function(){
   // gulp.watch(['./src/scss/**/*.scss'], ['sass','csslint', reload]);
   // gulp.watch(['./src/less/**/*.less'], ['less']);
   // gulp.watch("./build/less/*.html").on('change', reload);
-  gulp.watch(['./src/ruby-sass/**/*.scss'], ['rubysass']);
-  gulp.watch("./build/ruby-sass/*.html").on('change', reload);
+  // gulp.watch(['./src/ruby-sass/**/*.scss'], ['rubysass']);
+  // gulp.watch("./build/ruby-sass/*.html").on('change', reload);
   // gulp.watch(['./src/js/**/*.js'], ['jshint','jsmin', reload]);
   // gulp.watch(['./jekyll/**/*.html'], ['jekyll-build', reload]);
 });
