@@ -130,6 +130,26 @@ module.exports = {
     cssDest:  './build/icon/css',
     fontPath: './build/icon/font/',
     dest:     './build/icon/font'
+  },
+  sftpProduction :
+    src:  'production',
+    options: {
+      host: 'example.com',
+      port: '22',
+      user: 'user_name',
+      pass: '1234',
+      remotePath: ''
+    }
+  },
+  sftpStaging :
+    src:  'staging',
+    options: {
+      host: 'beta.example.com',
+      port: '22',
+      user: 'user_name',
+      pass: '1234',
+      remotePath: ''
+    }
   }
 };
 
@@ -156,7 +176,10 @@ module.exports = {
 // gulp.task('deploy-ghpage', require('../lib/ghpage'));
 // gulp.task('bump', require('../lib/bump'));
 // gulp.task('banner', require('../lib/banner'));
-gulp.task('useref', require('../lib/useref'));
+// gulp.task('useref', require('../lib/useref'));
+//
+// gulp.task('sftpProduction', require('../lib/sftpProduction'));
+// gulp.task('sftpStaging', require('../lib/sftpStaging'));
 
 // gulp.task('iconfont', require('../lib/iconfont'));
 // gulp.task('uninstall', require('../lib/uninstall'));
