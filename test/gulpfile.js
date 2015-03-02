@@ -131,8 +131,8 @@ module.exports = {
     fontPath: './build/icon/font/',
     dest:     './build/icon/font'
   },
-  sftpProduction :
-    src:  'production',
+  sftpProduction :{
+    src:'production',
     options: {
       host: 'example.com',
       port: '22',
@@ -141,7 +141,7 @@ module.exports = {
       remotePath: ''
     }
   },
-  sftpStaging :
+  sftpStaging :{
     src:  'staging',
     options: {
       host: 'beta.example.com',
@@ -181,7 +181,7 @@ module.exports = {
 // gulp.task('sftpProduction', require('../lib/sftpProduction'));
 // gulp.task('sftpStaging', require('../lib/sftpStaging'));
 
-// gulp.task('iconfont', require('../lib/iconfont'));
+gulp.task('iconfont', require('../lib/iconfont'));
 // gulp.task('uninstall', require('../lib/uninstall'));
 // gulp.task('pagespeed', require('../lib/pagespeed'));
 // gulp.task('browsersync', require('../lib/browsersync'));
