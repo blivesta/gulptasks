@@ -174,14 +174,14 @@ module.exports = {
 // gulp.task('hugo', require('../lib/hugo'));
 
 // gulp.task('deploy-ghpage', require('../lib/ghpage'));
-// gulp.task('bump', require('../lib/bump'));
+gulp.task('bump', require('../lib/bump'));
 // gulp.task('banner', require('../lib/banner'));
 // gulp.task('useref', require('../lib/useref'));
 //
 // gulp.task('sftpProduction', require('../lib/sftpProduction'));
 // gulp.task('sftpStaging', require('../lib/sftpStaging'));
 
-gulp.task('iconfont', require('../lib/iconfont'));
+// gulp.task('iconfont', require('../lib/iconfont'));
 // gulp.task('uninstall', require('../lib/uninstall'));
 // gulp.task('pagespeed', require('../lib/pagespeed'));
 // gulp.task('browsersync', require('../lib/browsersync'));
