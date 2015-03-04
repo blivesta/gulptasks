@@ -4,7 +4,7 @@ var gulp        = require('gulp');
 var runSequence = require('run-sequence');
 var pkg         = require('../package.json');
 
-var autoprefixerBrowsers = ['> 1%', 'last 2 versions', 'Firefox ESR', 'Opera 12.1'];
+var autoprefixerBrowsers = ['> 1%', 'last 2 versions', 'Firefox ESR', 'Opera 12.1','ie 9','ie 8'];
 
 var headerBanner = [
 '/*!',
@@ -18,7 +18,7 @@ var headerBanner = [
 
 module.exports = {
   browsersync: {
-    server: "./build/ruby-sass",
+    server: "./build/sass",
     // proxy: "yourlocal.dev",
     // notify: true,
     // https: false
@@ -35,14 +35,21 @@ module.exports = {
     }
   },
   sass: {
-    src: './src/sass/test-sass.scss',
+    src: './src/sass/sass.scss',
     dest: './build/sass/',
-    autoprefixer: autoprefixerBrowsers,
-    pkg: pkg,
+    rubySassOptions: {
+      sourcemap: true
+    },
+    fallback:{
+      use:true,
+      autoprefixer: autoprefixerBrowsers,
+      colorHexOptions:{rgba: true}
+    },
+    filter:'**/*.css',
     headerBanner : true,
     banner:headerBanner,
-    staticGenerator:true,
-    staticGeneratorBuild:'./pub'
+    pkg: pkg,
+    notify :"Compiled RubySass"
   },
   rubysass: {
     src: './src/ruby-sass/test-ruby-sass.scss',
@@ -159,7 +166,7 @@ module.exports = {
 // gulp.task('rubysass', require('../lib/rubysass'));
 
 // gulp.task('scsslint', require('../lib/scsslint'));
-// gulp.task('sass', require('../lib/sass'));
+gulp.task('sass', require('../lib/sass'));
 // gulp.task('less', require('../lib/less'));
 // gulp.task('csslint', require('../lib/csslint'));
 // gulp.task('cssmin', require('../lib/cssmin'));
@@ -174,7 +181,7 @@ module.exports = {
 // gulp.task('hugo', require('../lib/hugo'));
 
 // gulp.task('deploy-ghpage', require('../lib/ghpage'));
-gulp.task('bump', require('../lib/bump'));
+// gulp.task('bump', require('../lib/bump'));
 // gulp.task('banner', require('../lib/banner'));
 // gulp.task('useref', require('../lib/useref'));
 //
@@ -186,10 +193,10 @@ gulp.task('bump', require('../lib/bump'));
 // gulp.task('pagespeed', require('../lib/pagespeed'));
 // gulp.task('browsersync', require('../lib/browsersync'));
 
-// gulp.task('server', function(){browsersync(module.exports.browsersync);});
+gulp.task('browsersync', function(){browsersync(module.exports.browsersync);});
 
 gulp.task('default',['browsersync'], function(){
-  // gulp.watch(['./src/scss/**/*.scss'], ['sass','csslint', reload]);
+  gulp.watch(['src/sass/**/*.scss'], ['sass']);
   // gulp.watch(['./src/less/**/*.less'], ['less']);
   // gulp.watch("./build/less/*.html").on('change', reload);
   // gulp.watch(['./src/ruby-sass/**/*.scss'], ['rubysass']);

@@ -1,0 +1,13 @@
+html{
+  font-size:10px;
+}
+
+.a {
+  position: relative;
+  padding: 1rem 15px 15px;
+  border-top-left-radius: 4px;
+  box-sizing:"border-box";
+  animation-direction: alternate;
+  opacity:.7;
+  background:rgba(255,255,255,.5);
+}
