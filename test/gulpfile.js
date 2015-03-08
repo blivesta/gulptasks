@@ -37,13 +37,30 @@ module.exports = {
   'sass': {
     src: './src/sass/sass.scss',
     dest: './build/sass/',
+    sassOptions: {
+      errLogToConsole: true
+    },
+    autoprefixer: autoprefixerBrowsers,
+    fallback:{
+      use:true,
+      colorHexOptions:{rgba: true}
+    },
+    filter:'**/*.css',
+    headerBanner : true,
+    banner:headerBanner,
+    pkg: pkg,
+    notify :"Compiled Sass"
+  },
+  'rubysass': {
+    src: './src/ruby-sass/test-ruby-sass.scss',
+    dest: './build/ruby-sass/',
     rubySassOptions: {
       sourcemap: true,
       noCache: true,
     },
+    autoprefixer: autoprefixerBrowsers,
     fallback:{
       use:true,
-      autoprefixer: autoprefixerBrowsers,
       colorHexOptions:{rgba: true}
     },
     filter:'**/*.css',
@@ -52,17 +69,16 @@ module.exports = {
     pkg: pkg,
     notify :"Compiled RubySass"
   },
-  'rubysass': {
+  'rubysassBasic': {
     src: './src/ruby-sass/test-ruby-sass.scss',
     dest: './build/ruby-sass/',
-    options: {
+    rubySassOptions: {
+      sourcemap: true,
       noCache: true,
-      // bundleExec: false,
-      sourcemap: true
     },
-    filter:'**/*.css',
     autoprefixer: autoprefixerBrowsers,
-    notify :"Compiled RubySass"
+    filter:'**/*.css',
+    notify :"Compiled RubySassBasic"
   },
   'less': {
     src: './src/less/test-less.less',
@@ -177,21 +193,24 @@ module.exports = {
   }
 };
 
+//gulp.task('bower', require('gulptasks/lib/bower'));
 // gulp.task('bower', require('../lib/bower'));
 
-// gulp.task('rubysass', require('../lib/rubysass'));
-// gulp.task('scsslint', require('../lib/scsslint'));
 // gulp.task('sass', require('../lib/sass'));
+// gulp.task('rubysass', require('../lib/rubysass'));
+gulp.task('rubysass', require('../lib/rubysass-basic'));
 // gulp.task('less', require('../lib/less'));
+
+// gulp.task('jshint', require('../lib/jshint'));
 // gulp.task('csslint', require('../lib/csslint'));
+// gulp.task('scsslint', require('../lib/scsslint'));
+
 // gulp.task('cssmin', require('../lib/cssmin'));
+// gulp.task('jsmin', require('../lib/jsmin'));
 
 // gulp.task('browserify', require('../lib/browserify'));
 // gulp.task('concat', require('../lib/concat'));
 // gulp.task('concat-js', require('../lib/concat2'));
-
-// gulp.task('jshint', require('../lib/jshint'));
-// gulp.task('jsmin', require('../lib/jsmin'));
 
 // gulp.task('imgmin', require('../lib/imgmin'));
 // gulp.task('svg2png', require('../lib/svg2png'));
@@ -199,7 +218,7 @@ module.exports = {
 // gulp.task('iconfont', require('../lib/iconfont'));
 
 // gulp.task('stylestats', require('../lib/stylestats'));
-gulp.task('styledocco', require('../lib/styledocco'));
+// gulp.task('styledocco', require('../lib/styledocco'));
 
 // gulp.task('jekyll-build', require('../lib/jekyll'));
 // gulp.task('hugo', require('../lib/hugo'));
@@ -219,7 +238,7 @@ gulp.task('styledocco', require('../lib/styledocco'));
 gulp.task('browsersync', function(){browsersync(module.exports.browsersync);});
 
 gulp.task('default',['browsersync'], function(){
-  gulp.watch(['src/sass/**/*.scss'], ['sass']);
+  gulp.watch(['src/ruby-sass/**/*.scss'], ['rubysass']);
   // gulp.watch(['./src/less/**/*.less'], ['less']);
   // gulp.watch("./build/less/*.html").on('change', reload);
   // gulp.watch(['./src/ruby-sass/**/*.scss'], ['rubysass']);
