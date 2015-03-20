@@ -1,6 +1,6 @@
 {
   "name": "gulptasks",
-  "version": "0.9.1",
+  "version": "0.9.2",
   "description": "Gulp tasks for web app development.",
   "keywords": [
     "gulp"
@@ -24,13 +24,13 @@
     "gulp": "^3.8.10",
     "gulp-autoprefixer": "^2.1.0",
     "gulp-bower": "^0.0.10",
-    "gulp-bump": "^0.2.2",
+    "gulp-bump": "^0.3.0",
     "gulp-consolidate": "^0.1.1",
     "gulp-concat": "^2.4.2",
     "gulp-csslint": "^0.1.5",
     "gulp-csso": "^1.0.0",
     "gulp-filter":"^2.0.2",
-    "gulp-gh-pages": "^0.4.0",
+    "gulp-gh-pages": "^0.5.0",
     "gulp-gzip": "^1.0.0",
     "gulp-header": "^1.2.2",
     "gulp-iconfont": "^1.0.0",
@@ -47,7 +47,7 @@
     "gulp-sftp":"^0.1.4",
     "gulp-size": "^1.1.0",
     "gulp-sourcemaps": "^1.2.8",
-    "gulp-stylestats": "^0.2.6",
+    "gulp-stylestats": "^0.5.5",
     "gulp-svg2png": "^0.3.0",
     "gulp-uglify": "^1.1.0",
     "gulp-useref":"^1.1.1",
