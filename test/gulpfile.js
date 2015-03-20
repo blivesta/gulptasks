@@ -193,12 +193,10 @@ module.exports = {
   }
 };
 
-//gulp.task('bower', require('gulptasks/lib/bower'));
-// gulp.task('bower', require('../lib/bower'));
 
 // gulp.task('sass', require('../lib/sass'));
 // gulp.task('rubysass', require('../lib/rubysass'));
-gulp.task('rubysass', require('../lib/rubysass-basic'));
+// gulp.task('rubysass', require('../lib/rubysass-basic'));
 // gulp.task('less', require('../lib/less'));
 
 // gulp.task('jshint', require('../lib/jshint'));
@@ -210,35 +208,36 @@ gulp.task('rubysass', require('../lib/rubysass-basic'));
 
 // gulp.task('browserify', require('../lib/browserify'));
 // gulp.task('concat', require('../lib/concat'));
-// gulp.task('concat-js', require('../lib/concat2'));
+// gulp.task('concat-js', require('../lib/concat-second'));
 
 // gulp.task('imgmin', require('../lib/imgmin'));
 // gulp.task('svg2png', require('../lib/svg2png'));
-
 // gulp.task('iconfont', require('../lib/iconfont'));
 
-// gulp.task('stylestats', require('../lib/stylestats'));
-// gulp.task('styledocco', require('../lib/styledocco'));
 
 // gulp.task('jekyll-build', require('../lib/jekyll'));
 // gulp.task('hugo', require('../lib/hugo'));
-
-// gulp.task('bump', require('../lib/bump'));
-// gulp.task('banner', require('../lib/banner'));
-// gulp.task('useref', require('../lib/useref'));
-
-// gulp.task('deploy-ghpage', require('../lib/ghpage'));
-// gulp.task('sftpProduction', require('../lib/sftpProduction'));
-// gulp.task('sftpStaging', require('../lib/sftpStaging'));
-
 // gulp.task('uninstall', require('../lib/uninstall'));
 // gulp.task('pagespeed', require('../lib/pagespeed'));
 // gulp.task('browsersync', require('../lib/browsersync'));
+// gulp.task('bower', require('../lib/bower'));
+// gulp.task('bump', require('../lib/bump'));
+// gulp.task('banner', require('../lib/banner'));
+// gulp.task('useref', require('../lib/useref'));
+// gulp.task('stylestats', require('../lib/stylestats'));
+// gulp.task('styledocco', require('../lib/styledocco'));
+
+
+// gulp.task('deploy-ghpage', require('../lib/ghpage'));
+// gulp.task('sftp-production', require('../lib/sftp-production'));
+// gulp.task('sftp-staging', require('../lib/sftp-staging'));
+// gulp.task('sftp-test', require('../lib/sftp-test'));
+
 
 gulp.task('browsersync', function(){browsersync(module.exports.browsersync);});
 
 gulp.task('default',['browsersync'], function(){
-  gulp.watch(['src/ruby-sass/**/*.scss'], ['rubysass']);
+  // gulp.watch(['src/ruby-sass/**/*.scss'], ['rubysass']);
   // gulp.watch(['./src/less/**/*.less'], ['less']);
   // gulp.watch("./build/less/*.html").on('change', reload);
   // gulp.watch(['./src/ruby-sass/**/*.scss'], ['rubysass']);
