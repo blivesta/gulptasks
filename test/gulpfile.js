@@ -41,10 +41,7 @@ module.exports = {
       errLogToConsole: true
     },
     autoprefixer: autoprefixerBrowsers,
-    fallback:{
-      use:true,
-      colorHexOptions:{rgba: true}
-    },
+    fallback:true, // rgba opacity rem
     filter:'**/*.css',
     headerBanner : true,
     banner:headerBanner,
@@ -195,7 +192,7 @@ module.exports = {
 
 
 // gulp.task('sass', require('../lib/sass'));
-// gulp.task('rubysass', require('../lib/rubysass'));
+gulp.task('rubysass', require('../lib/rubysass'));
 // gulp.task('rubysass', require('../lib/rubysass-basic'));
 // gulp.task('less', require('../lib/less'));
 
