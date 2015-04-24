@@ -34,20 +34,6 @@ module.exports = {
       bundleExec: false
     }
   },
-  'sass': {
-    src: './src/sass/sass.scss',
-    dest: './build/sass/',
-    sassOptions: {
-      errLogToConsole: true
-    },
-    autoprefixer: autoprefixerBrowsers,
-    fallback:true, // rgba opacity rem
-    filter:'**/*.css',
-    headerBanner : true,
-    banner:headerBanner,
-    pkg: pkg,
-    notify :"Compiled Sass"
-  },
   'rubysass': {
     src: './src/ruby-sass/test-ruby-sass.scss',
     dest: './build/ruby-sass/',
