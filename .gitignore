@@ -1,6 +1,3 @@
 node_modules
-bower_components
-test/_hugo-build
-test/build
-test/pub
-test/.sass-cache
+sandbox
+~*
