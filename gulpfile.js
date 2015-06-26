@@ -26,24 +26,24 @@ gulp.task('browserify', function(){
   });
 });
 
-gulp.task('rubysass', function(){
-  return require(process.cwd() + '/lib/rubysass')({
+gulp.task('sass', function(){
+  return require(process.cwd() + '/lib/sass')({
     src: './sandbox/src/scss/sass.scss',
-    dest: './sandbox/build/rubysass/',
-    rubySassOptions: {
+    dest: './sandbox/build/sass/',
+    rubySass: {
       sourcemap: true,
       noCache: true,
     },
-    autoprefixer: autoprefixerBrowsers,
     fallback:{
-      use:true,
-      colorHexOptions:{rgba: true}
+      autoprefixer: ['> 1%', 'last 2 versions'],
+      opacity:true,
+      rgba:true,
+      pixrem:true
     },
-    filter:'**/*.css',
-    headerBanner : true,
-    banner:headerBanner,
-    pkg: pkg,
-    notify :"Compiled RubySass"
+    banner: {
+      content: headerBanner,
+      pkg: pkg
+    }
   });
 });
 
@@ -135,15 +135,6 @@ gulp.task('banner', function(){
     dest:  './sandbox/build/js/banner',
     pkg: pkg,
     banner:headerBanner
-  });
-});
-
-
-gulp.task('bump', function(){
-  return require(process.cwd() + '/lib/bump')({
-    version: pkg.version,
-    src:  './bower.json',
-    dest: '.'
   });
 });
 
