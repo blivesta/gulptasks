@@ -12,7 +12,7 @@ $ npm install gulptasks
 
 ## Example
 
-[gulpfile.js](https://github.com/blivesta/gulptasks/blob/master/gulpfile.js)
+[gulpfile.js](https://github.com/blivesta/gulptasks/blob/1.0.0-alpha.0/gulpfile.js)
 
 
 ## Stream
