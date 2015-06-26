@@ -2,7 +2,7 @@
 
 [![npm version](https://img.shields.io/npm/v/gulptasks.svg?style=flat)](https://www.npmjs.com/package/gulptasks)
 [![Build Status](https://img.shields.io/travis/blivesta/gulptasks/master.svg?style=flat)](https://travis-ci.org/blivesta/gulptasks)
-[![Dependency Status](https://david-dm.org/blivesta/gulptasks.svg)](https://david-dm.org/blivesta/gulptasks)
+
 
 ## Install
 
@@ -26,7 +26,7 @@ $ npm install gulptasks
 - imgmin (gulp-imagemin)
 - jshint (gulp-jshint)
 - jsmin (gulp-uglify)
-- rubysass (gulp-ruby-sass, gulp-postcss, autoprefixer, pixrem)
+- sass (gulp-ruby-sass, gulp-postcss, autoprefixer, pixrem)
 - sftp (gulp-sftp)
 - svg2png (gulp-svg2png)
 - uninstall (del)
