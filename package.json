@@ -30,7 +30,6 @@
     "gulp-header": "^1.2.2",
     "gulp-iconfont": "^1.0.0",
     "gulp-if": "^1.2.5",
-    "gulp-image": "^0.5.8",
     "gulp-jshint": "^1.8.6",
     "gulp-postcss":"^5.1.8",
     "gulp-rename": "^1.2.2",
