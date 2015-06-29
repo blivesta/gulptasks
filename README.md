@@ -15,7 +15,7 @@ $ npm install gulptasks
 [gulpfile.js](https://github.com/blivesta/gulptasks/blob/master/fixtures/gulpfile.js)
 
 
-## Stream
+## Tasks
 
 - banner (gulp-header)
 - browserify (browserify, babelify)
