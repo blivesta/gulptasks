@@ -1,0 +1,26 @@
+.Foo {
+  padding: 1rem 15px 15px;
+  border-top-left-radius: 4px;
+  box-sizing:"border-box";
+  animation-direction: alternate;
+}
+
+
+@media (min-width: 40em) {
+  .Foo {
+    background:rgba(255,255,255,.5);
+  }
+}
+
+@media (min-width: 40em) {
+  .Bar {
+    opacity:.7;
+  }
+}
+
+@media (min-width: 60em) {
+  .Foo {
+    margin-top:1rem;
+    margin-bottom:1em;
+  }
+}

@@ -3,7 +3,7 @@ var reload      = browsersync.reload;
 var gulp        = require('gulp');
 var runSequence = require('run-sequence');
 var pngquant    = require('imagemin-pngquant');
-var pkg         = require( process.cwd() + '/package.json');
+var pkg         = require('../package.json');
 
 var autoprefixerBrowsers = ['> 1%', 'last 2 versions'];
 
@@ -19,27 +19,26 @@ var headerBanner = [
 
 
 gulp.task('browserify', function(){
-  return require(process.cwd() + '/lib/browserify')({
+  return require('../lib/browserify')({
     bundleName:  "bundle.js",
-    src:  './sandbox/src/browserify/main.js',
-    dest: './sandbox/build/browserify',
+    src:  './src/browserify/main.js',
+    dest: './build/browserify',
   });
 });
 
 gulp.task('sass', function(){
-  return require(process.cwd() + '/lib/sass')({
-    src: './sandbox/src/scss/sass.scss',
-    dest: './sandbox/build/sass/',
+  return require('../lib/sass')({
+    src: './src/scss/sass.scss',
+    dest: './build/sass/',
     rubySass: {
       sourcemap: true,
       noCache: true,
     },
-    fallback:{
-      autoprefixer: ['> 1%', 'last 2 versions'],
-      opacity:true,
-      rgba:true,
-      pixrem:true
-    },
+    autoprefixer: ['> 1%', 'last 2 versions'],
+    opacity:false,
+    rgba:true,
+    pixrem:true,
+    mqpacker:true,
     banner: {
       content: headerBanner,
       pkg: pkg
@@ -48,45 +47,45 @@ gulp.task('sass', function(){
 });
 
 gulp.task('cssmin', function(){
-  return require(process.cwd() + '/lib/cssmin')({
-    src:  './sandbox/build/**/*.css',
-    dest: './sandbox/build/cssmin/'
+  return require('../lib/cssmin')({
+    src:  './build/**/*.css',
+    dest: './build/cssmin/'
   });
 });
 
 gulp.task('csslint', function(){
-  return require(process.cwd() + '/lib/csslint')({
+  return require('../lib/csslint')({
     // csslint: './.csslintrc',
-    src:  './sandbox/build/**/*.css',
+    src:  './build/**/*.css',
   });
 });
 
 gulp.task('concat', function(){
-  return require(process.cwd() + '/lib/concat')({
-    src:  './sandbox/src/js/*.js',
-    dest: './sandbox/build/js',
+  return require('../lib/concat')({
+    src:  './src/js/*.js',
+    dest: './build/js',
     name: 'concat.js'
   });
 });
 
 gulp.task('jsmin', function(){
-  return require(process.cwd() + '/lib/jsmin')({
-    src:  './sandbox/src/js/concat.js',
-    dest: './sandbox/build/js/'
+  return require('../lib/jsmin')({
+    src:  './src/js/concat.js',
+    dest: './build/js/'
   });
 });
 
 gulp.task('jshint', function(){
-  return require(process.cwd() + '/lib/jshint')({
+  return require('../lib/jshint')({
     // jshintPath: './.jshintrc',
-    src:  './sandbox/build/js/concat.js'
+    src:  './build/js/concat.js'
   });
 });
 
 gulp.task('image', function(){
-  return require(process.cwd() + '/lib/image')({
-    src:  './sandbox/src/images/**/*',
-    dest: './sandbox/build/images',
+  return require('../lib/image')({
+    src:  './src/images/**/*',
+    dest: './build/images',
     options:{
       progressive: true,
       svgoPlugins: [{removeViewBox: false}],
@@ -96,27 +95,27 @@ gulp.task('image', function(){
 });
 
 gulp.task('svg2png', function(){
-  return require(process.cwd() + '/lib/svg2png')({
-    src:  './sandbox/src/images/**/*.svg',
-    dest: './sandbox/src/images'
+  return require('../lib/svg2png')({
+    src:  './src/images/**/*.svg',
+    dest: './src/images'
   });
 });
 
 
 gulp.task('iconfont', function(){
-  return require(process.cwd() + '/lib/iconfont')({
+  return require('../lib/iconfont')({
     name:     'icon',
-    svgSrc:   './sandbox/src/icon/svg/*.svg',
-    cssSrc:   './sandbox/src/icon/css/template.css',
-    cssDest:  './sandbox/build/icon/css',
+    svgSrc:   './src/icon/svg/*.svg',
+    cssSrc:   './src/icon/css/template.css',
+    cssDest:  './build/icon/css',
     fontPath: '../font/',
-    dest:     './sandbox/build/icon/font'
+    dest:     './build/icon/font'
   });
 });
 
 
 gulp.task('sftp', function(){
-  return require(process.cwd() + '/lib/sftp')({
+  return require('../lib/sftp')({
     src:'production',
     options: {
       host: 'example.com',
@@ -130,9 +129,9 @@ gulp.task('sftp', function(){
 
 
 gulp.task('banner', function(){
-  return require(process.cwd() + '/lib/banner')({
-    src:  './sandbox/build/js/concat.js',
-    dest:  './sandbox/build/js/banner',
+  return require('../lib/banner')({
+    src:  './build/js/concat.js',
+    dest:  './build/js/banner',
     pkg: pkg,
     banner:headerBanner
   });
@@ -140,9 +139,9 @@ gulp.task('banner', function(){
 
 
 gulp.task('uninstall', function(){
-  return require(process.cwd() + '/lib/uninstall')({
+  return require('../lib/uninstall')({
     files:[
-      "./sandbox/build"
+      "./build"
     ]
   });
 });
@@ -150,14 +149,14 @@ gulp.task('uninstall', function(){
 
 gulp.task('browsersync', function(){
   browsersync({
-    server: "./sandbox",
+    server: "./",
   });
 });
 
 gulp.task('default',['browsersync'], function(){
-  gulp.watch(['./sandbox/src/scss/*.scss'], ['rubysass']);
-  gulp.watch(['./sandbox/src/browserify/*.js'], ['browserify']);
-  gulp.watch("./sandbox/build/*/*.{css,js}").on('change', reload);
+  gulp.watch(['./src/scss/*.scss'], ['rubysass']);
+  gulp.watch(['./src/browserify/*.js'], ['browserify']);
+  gulp.watch("./build/*/*.{css,js}").on('change', reload);
 });
 
 gulp.task('build', function(){
