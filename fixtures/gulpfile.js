@@ -34,11 +34,13 @@ gulp.task('sass', function(){
       sourcemap: true,
       noCache: true,
     },
-    autoprefixer: ['> 1%', 'last 2 versions'],
-    opacity:false,
-    rgba:true,
-    pixrem:true,
-    mqpacker:true,
+    postcss: {
+      autoprefixer: ['> 1%', 'last 2 versions'],
+      opacity:false,
+      rgba:true,
+      pixrem:true,
+      mqpacker:true
+    },
     banner: {
       content: headerBanner,
       pkg: pkg
