@@ -12,7 +12,7 @@ $ npm install gulptasks
 
 ## Example
 
-[gulpfile.js](https://github.com/blivesta/gulptasks/blob/1.0.0-alpha.0/gulpfile.js)
+[gulpfile.js](https://github.com/blivesta/gulptasks/blob/master/fixtures/gulpfile.js)
 
 
 ## Stream
@@ -26,7 +26,7 @@ $ npm install gulptasks
 - imgmin (gulp-imagemin)
 - jshint (gulp-jshint)
 - jsmin (gulp-uglify)
-- sass (gulp-ruby-sass, gulp-postcss, autoprefixer, pixrem)
+- sass (gulp-ruby-sass, gulp-postcss, autoprefixer, pixrem, postcss-color-rgba-fallback, postcss-opacity, css-mqpacker)
 - sftp (gulp-sftp)
 - svg2png (gulp-svg2png)
 - uninstall (del)
