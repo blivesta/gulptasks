@@ -18,7 +18,7 @@ $ npm install gulptasks
 ## Tasks
 
 - banner (gulp-header)
-- browserify (browserify, babelify)
+- browserify (browserify)
 - concat (gulp-concat)
 - csslint (gulp-csslint)
 - cssmin (gulp-csso, gulp-gzip)
