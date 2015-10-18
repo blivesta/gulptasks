@@ -18,7 +18,7 @@
     "browserify":"^10.2.4",
     "css-mqpacker":"^3.1.0",
     "del": "^1.2.0",
-    "gulp": "^3.8.11",
+    "gulp": "^3.9.0",
     "gulp-consolidate": "^0.1.1",
     "gulp-imagemin":"^2.2.1",
     "gulp-concat": "^2.5.2",
