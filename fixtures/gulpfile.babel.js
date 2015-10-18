@@ -16,7 +16,7 @@ import Svg2png from '../lib/svg2png.js'
 import Iconfont from '../lib/iconfont.js'
 import Sftp from '../lib/sftp.js'
 import Banner from '../lib/banner.js'
-import Uninstall from '../lib/uninstall.js'
+import Del from '../lib/del.js'
 
 const autoprefixerBrowsers = [
   '> 1%',
@@ -168,7 +168,7 @@ gulp.task('banner', () => {
 
 
 gulp.task('uninstall', () => {
-  return Uninstall({
+  return Del({
     files: ['./build']
   });
 });
