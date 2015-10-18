@@ -1,7 +1,7 @@
 {
   "name": "gulptasks",
-  "version": "1.0.0-alpha.4",
-  "description": "bundle of gulp tasks",
+  "version": "2.0.0",
+  "description": "a bundle of gulp tasks",
   "author": "blivesta",
   "license": "MIT",
   "repository": {
