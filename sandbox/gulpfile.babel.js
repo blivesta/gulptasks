@@ -16,10 +16,6 @@ import Sass from '../lib/sass.js'
 import Sftp from '../lib/sftp.js'
 import Svg2png from '../lib/svg2png.js'
 
-const autoprefixerBrowsers = [
-  '> 1%',
-  'last 2 versions'
-]
 const headerBanner = [
   '/*!',
   ' * <%= pkg.name %> - <%= pkg.description %>',
@@ -84,7 +80,7 @@ gulp.task('concat', () => {
 
 gulp.task('jsmin', () => {
   return JsMin({
-    src: './src/js/concat.js',
+    src: './build/browserify/bundle.js',
     dest: './build/js/'
   });
 });
@@ -92,7 +88,6 @@ gulp.task('jsmin', () => {
 
 gulp.task('jshint', () => {
   return Jshint({
-    // jshintPath: './.jshintrc',
     src: './build/js/concat.js'
   });
 });
@@ -122,7 +117,7 @@ gulp.task('image', () => {
 gulp.task('svg2png', () => {
   return Svg2png({
     src: './src/images/**/*.svg',
-    dest: './src/images'
+    dest: './build/images'
   });
 });
 
@@ -155,7 +150,7 @@ gulp.task('sftp', () => {
 
 gulp.task('banner', () => {
   return Banner({
-    src: './build/js/concat.js',
+    src: './build/browserify/bundle.js',
     dest: './build/js/banner',
     pkg: pkg,
     banner: headerBanner
@@ -163,9 +158,12 @@ gulp.task('banner', () => {
 });
 
 
-gulp.task('uninstall', () => {
+gulp.task('clenup', () => {
   return Del({
-    files: ['./build']
+    files: [
+      './build/',
+      './svg-tool'
+    ]
   });
 });
 
@@ -178,17 +176,16 @@ gulp.task('browsersync', () => {
 
 
 gulp.task('default', ['browsersync'], () => {
-  gulp.watch(['./src/scss/*.scss'], ['rubysass']);
+  gulp.watch(['./src/scss/*.scss'], ['sass']);
   gulp.watch(['./src/browserify/*.js'], ['js']);
   gulp.watch('./build/*/*.{css,js}').on('change', reload);
 });
 
 
-gulp.task('build', () => {
+gulp.task('build', ['clenup','svg-tool'], () => {
   runSequence(
-    'uninstall',
     'js',
-    'rubysass',
+    'sass',
     'concat',
     [
       'cssmin',
@@ -197,7 +194,6 @@ gulp.task('build', () => {
     ],
     'image',
     'banner',
-    'jshint',
-    'iconfont'
+    'jshint'
   );
 });

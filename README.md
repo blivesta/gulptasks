@@ -12,21 +12,20 @@ $ npm install gulptasks
 
 ## Example
 
-[gulpfile.js](https://github.com/blivesta/gulptasks/blob/master/fixtures/gulpfile.js)
+[gulpfile.js](https://github.com/blivesta/gulptasks/blob/master/fixtures/gulpfile.babel.js)
 
 
 ## Tasks
 
 - banner (gulp-header)
 - concat (gulp-concat)
-- csslint (gulp-csslint)
 - cssmin (gulp-csso, gulp-gzip)
-- iconfont (gulp-iconfont, gulp-consolidate)
-- imgmin (gulp-imagemin)
-- js-browserify (browserify, babelify)
+- image (gulp-image)
+- js-browserify (browserify, babelify, vinyl-source-stream, vinyl-transform)
 - jshint (gulp-jshint)
 - jsmin (gulp-uglify)
 - sass (gulp-ruby-sass, gulp-postcss, autoprefixer, pixrem, postcss-color-rgba-fallback, postcss-opacity, css-mqpacker)
 - sftp (gulp-sftp)
 - svg2png (gulp-svg2png)
-- uninstall (del)
+- svg-tool (flexicon-generator)
+- clenup (del)
