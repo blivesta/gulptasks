@@ -18,12 +18,12 @@ $ npm install gulptasks
 ## Tasks
 
 - banner (gulp-header)
-- browserify (browserify)
 - concat (gulp-concat)
 - csslint (gulp-csslint)
 - cssmin (gulp-csso, gulp-gzip)
 - iconfont (gulp-iconfont, gulp-consolidate)
 - imgmin (gulp-imagemin)
+- js-browserify (browserify, babelify)
 - jshint (gulp-jshint)
 - jsmin (gulp-uglify)
 - sass (gulp-ruby-sass, gulp-postcss, autoprefixer, pixrem, postcss-color-rgba-fallback, postcss-opacity, css-mqpacker)
