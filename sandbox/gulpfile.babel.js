@@ -9,7 +9,6 @@ import Del from '../lib/del.js'
 import CssMin from '../lib/css-min.js'
 import Concat from '../lib/concat.js'
 import SvgTool from '../lib/svg-tool.js'
-import Iconfont from '../lib/iconfont.js'
 import JsMin from '../lib/js-min.js'
 import Jshint from '../lib/jshint.js'
 import Image from '../lib/image.js'
@@ -136,18 +135,6 @@ gulp.task('svg-tool', () => {
     name: 'gulptasks',
     prefix: 'gt',
     dist:'./~svg-tool'
-  });
-});
-
-
-gulp.task('iconfont', () => {
-  return Iconfont({
-    name: 'icon',
-    svgSrc: './src/icon/svg/*.svg',
-    cssSrc: './src/icon/css/template.css',
-    cssDest: './build/icon/css',
-    fontPath: '../font/',
-    dest: './build/icon/font'
   });
 });
 
