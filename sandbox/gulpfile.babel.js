@@ -4,17 +4,17 @@ import runSequence from 'run-sequence'
 import pkg from '../package.json'
 // gulptasks
 import Browserify from '../lib/js-browserify.js'
-import Sass from '../lib/sass.js'
-import Cssmin from '../lib/css-min.js'
-import Concat from '../lib/concat.js'
-import Jsmin from '../lib/js-min.js'
-import Jshint from '../lib/jshint.js'
-import Image from '../lib/image.js'
-import Svg2png from '../lib/svg2png.js'
-import Iconfont from '../lib/iconfont.js'
-import Sftp from '../lib/sftp.js'
 import Banner from '../lib/banner.js'
 import Del from '../lib/del.js'
+import CssMin from '../lib/css-min.js'
+import Concat from '../lib/concat.js'
+import Iconfont from '../lib/iconfont.js'
+import JsMin from '../lib/js-min.js'
+import Jshint from '../lib/jshint.js'
+import Image from '../lib/image.js'
+import Sass from '../lib/sass.js'
+import Sftp from '../lib/sftp.js'
+import Svg2png from '../lib/svg2png.js'
 
 const autoprefixerBrowsers = [
   '> 1%',
@@ -66,7 +66,7 @@ gulp.task('sass', () => {
 
 
 gulp.task('cssmin', () => {
-  return Cssmin({
+  return CssMin({
     src: './build/**/*.css',
     dest: './build/cssmin/'
   });
@@ -83,7 +83,7 @@ gulp.task('concat', () => {
 
 
 gulp.task('jsmin', () => {
-  return Jsmin({
+  return JsMin({
     src: './src/js/concat.js',
     dest: './build/js/'
   });
