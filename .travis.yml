@@ -1,6 +1,7 @@
+sudo: false
 language: node_js
 node_js:
-  - 0.11
+  - 0.12
 notifications:
   slack: blivesta:ygWmRLL4fyU0s7FFlVHSsJnS
   email: false
