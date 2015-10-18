@@ -1,7 +1,6 @@
 import Browsersync,{reload} from 'browser-sync'
 import gulp from 'gulp'
 import runSequence from 'run-sequence'
-import pngquant from 'imagemin-pngquant'
 import pkg from '../package.json'
 // gulptasks
 import Browserify from '../lib/js-browserify.js'
