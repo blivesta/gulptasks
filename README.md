@@ -12,7 +12,7 @@ $ npm install gulptasks
 
 ## Example
 
-[gulpfile.js](https://github.com/blivesta/gulptasks/blob/master/fixtures/gulpfile.babel.js)
+[gulpfile.babel.js](https://github.com/blivesta/gulptasks/blob/master/sandbox/gulpfile.babel.js)
 
 
 ## Tasks
