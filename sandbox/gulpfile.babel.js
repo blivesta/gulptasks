@@ -5,7 +5,7 @@ import pkg from '../package.json'
 // gulptasks
 import Browserify from '../lib/js-browserify.js'
 import Sass from '../lib/sass.js'
-import Cssmin from '../lib/cssmin.js'
+import Cssmin from '../lib/css-min.js'
 import Concat from '../lib/concat.js'
 import Jsmin from '../lib/js-min.js'
 import Jshint from '../lib/jshint.js'
