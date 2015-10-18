@@ -10,7 +10,6 @@
   },
   "devDependencies": {
     "browser-sync": "^2.2.1",
-    "imagemin-pngquant":"^4.1.0",
     "run-sequence": "^1.0.2"
   },
   "dependencies": {
@@ -22,7 +21,7 @@
     "del": "^1.2.0",
     "gulp": "^3.9.0",
     "gulp-consolidate": "^0.1.1",
-    "gulp-imagemin":"^2.2.1",
+    "gulp-image":"^1.1.1",
     "gulp-concat": "^2.5.2",
     "gulp-csslint": "^0.1.5",
     "gulp-csso": "^1.0.0",

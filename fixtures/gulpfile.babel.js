@@ -113,11 +113,17 @@ gulp.task('image', () => {
     src: './src/images/**/*',
     dest: './build/images',
     options: {
-      progressive: true,
-      svgoPlugins: [{
-        removeViewBox: false
-      }],
-      use: [pngquant()]
+      // gulp-image options
+      // https://github.com/1000ch/gulp-image#usage
+      pngquant: true,
+      optipng: false,
+      zopflipng: true,
+      advpng: true,
+      jpegRecompress: false,
+      jpegoptim: true,
+      mozjpeg: true,
+      gifsicle: true,
+      svgo: true
     }
   });
 });
