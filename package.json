@@ -23,7 +23,6 @@
     "gulp-consolidate": "^0.1.1",
     "gulp-image":"^1.1.1",
     "gulp-concat": "^2.5.2",
-    "gulp-csslint": "^0.1.5",
     "gulp-csso": "^1.0.0",
     "gulp-header": "^1.2.2",
     "gulp-iconfont": "^1.0.0",

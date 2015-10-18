@@ -6,7 +6,6 @@ import pkg from '../package.json'
 import Browserify from '../lib/js-browserify.js'
 import Sass from '../lib/sass.js'
 import Cssmin from '../lib/cssmin.js'
-import Csslint from '../lib/csslint.js'
 import Concat from '../lib/concat.js'
 import Jsmin from '../lib/jsmin.js'
 import Jshint from '../lib/jshint.js'
@@ -70,14 +69,6 @@ gulp.task('cssmin', () => {
   return Cssmin({
     src: './build/**/*.css',
     dest: './build/cssmin/'
-  });
-});
-
-
-gulp.task('csslint', () => {
-  return Csslint({
-    // csslint: './.csslintrc',
-    src: './build/**/*.css'
   });
 });
 
@@ -207,6 +198,6 @@ gulp.task('build', () => {
     'image',
     'banner',
     'jshint',
-    // 'csslint',
-    'iconfont');
+    'iconfont'
+  );
 });
