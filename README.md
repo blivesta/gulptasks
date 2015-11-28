@@ -27,5 +27,5 @@ $ npm install gulptasks
 - sass (gulp-ruby-sass, gulp-postcss, autoprefixer, pixrem, postcss-color-rgba-fallback, postcss-opacity, css-mqpacker)
 - sftp (gulp-sftp)
 - svg2png (gulp-svg2png)
-- svg-tool (flexicon-generator)
+- svgpack (SVGPack)
 - clenup (del)

@@ -8,7 +8,7 @@ import Banner from '../lib/banner.js'
 import Del from '../lib/del.js'
 import CssMin from '../lib/css-min.js'
 import Concat from '../lib/concat.js'
-import SvgTool from '../lib/svg-tool.js'
+import Svgpack from '../lib/svgpack.js'
 import JsMin from '../lib/js-min.js'
 import Jshint from '../lib/jshint.js'
 import Image from '../lib/image.js'
@@ -123,13 +123,13 @@ gulp.task('svg2png', () => {
 
 
 gulp.task('svg-tool', () => {
-  return SvgTool({
+  return Svgpack({
     src:'./src/images/*.svg',
     // flexicon-generator options
-    // https://github.com/blivesta/flexicon-generator#options
+    // https://github.com/blivesta/svgpack#options
     name: 'gulptasks',
     prefix: 'gt',
-    dist:'./~svg-tool'
+    dist:'./~svgpack'
   });
 });
 

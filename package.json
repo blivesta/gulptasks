@@ -19,7 +19,6 @@
     "browserify":"^11.2.0",
     "css-mqpacker":"^4.0.0",
     "del": "^2.0.2",
-    "flexicon-generator": "^0.0.3",
     "gulp": "^3.9.0",
     "gulp-image":"^1.1.1",
     "gulp-concat": "^2.6.0",
@@ -39,6 +38,7 @@
     "postcss-color-rgba-fallback": "^2.0.0",
     "postcss-opacity":"^3.0.0",
     "pixrem":"^3.0.0",
+    "svgpack": "^0.1.0",
     "vinyl-source-stream":"1.1.0",
     "vinyl-transform":"1.0.0"
   }
